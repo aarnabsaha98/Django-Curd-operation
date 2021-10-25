@@ -1,0 +1,38 @@
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heading{
+    border: 1px dashed black;
+    background-color: cadetblue;
+    padding:10px;
+    margin: 30px;
+
+
+}
+
+.delete-btn{
+
+    background-color: rgb(230, 31, 31);
+    padding: 5px;
+
+}
+.edit-btn{
+
+    background-color: rgb(224, 197, 44);
+    padding: 5px;
+
+}
+.detail-btn{
+
+    background-color: rgb(23, 199, 0);
+    padding: 5px;
+
+}
+.submit-btn{
+
+    background-color: rgb(39, 11, 200);
+    padding: 5px;
+
+}

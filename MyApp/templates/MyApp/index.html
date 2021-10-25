@@ -1,0 +1,35 @@
+{% extends 'MyApp/base.html' %}
+
+
+{% block content %}
+<div class="container">
+    <h2>Fill Up Details </h2>
+    <form method="post" action="/curd/">
+        {% csrf_token %} {{ form.as_p }}
+        <input type="submit" value="Submit" class="submit-btn">
+    </form>
+</div>
+
+
+<div class="Show-me-data">
+    <div class="heading-1">
+        <h2>Let Me See data</h2>
+    </div>
+    {% if employee %}
+    <h3> Table Data</h3>
+    {% for em in employee %}
+    <div class="data"> {{em.Name}} {{em.salary}}
+        <form action="{% url 'delete' em.id %}" method="POST">
+            {%csrf_token%}
+            <input type="submit" value="Delete" class="delete-btn">
+            <button class="edit-btn"> <a href="{% url 'update' em.id %}"> Edit</a></button>
+            <button class="detail-btn"><a href="{% url 'detail-view' em.id %}"> Detail</a></button>
+        </form>
+
+    </div>
+
+    {%endfor%} {% else %}
+    <h3> No records found !! </h3>
+    {% endif %}
+</div>
+{%endblock%}
